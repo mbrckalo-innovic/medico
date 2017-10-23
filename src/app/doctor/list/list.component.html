@@ -1,0 +1,38 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">Doktori</li>
+  <a routerLink="/doctors/add" class="btn btn-dark btn-sm float-right">
+    <i class="fa fa-user-plus" aria-hidden="true"></i>
+    Novi doktor
+  </a>
+</ol>
+<table class="table table-striped table-responsive" *ngIf="(doctors$ | async)?.length != 0; else no_results">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>E-mail</th>
+    <th>Specijalizacija</th>
+    <th>Opcije</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let doctor of doctors$ | async">
+    <th scope="row">{{doctor.id}}</th>
+    <td>{{doctor.first_name}}</td>
+    <td>{{doctor.last_name}}</td>
+    <td>{{doctor.email}}</td>
+    <td>{{doctor.specialization}}</td>
+    <td>
+      <a [routerLink]="['/doctors', doctor.id]" class="btn btn-dark btn-sm">
+        <i class="fa fa-address-card" aria-hidden="true"></i>
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<ng-template #no_results>
+  <div class="alert alert-warning" role="alert">
+    Nema doktora.
+  </div>
+</ng-template>

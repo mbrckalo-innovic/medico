@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Doktori <i class="fa fa-user-md fa-5x float-right text-danger"></i></h4>
+        <p class="card-text" *ngIf="totalDoctors > 0; else no_doctors">Broj doktora: <span class="badge badge-danger">{{totalDoctors}}</span></p>
+        <ng-template #no_doctors>
+          <p class="card-text">
+            <span class="badge badge-dark">Nema doktora</span>
+          </p>
+        </ng-template>
+        <a routerLink="/doctors" class="btn btn-outline-danger"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+        <a routerLink="/doctors/add" class="btn btn-outline-dark"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Pacijenti <i class="fa fa-users fa-5x float-right text-danger"></i></h4>
+        <p class="card-text" *ngIf="totalPatients > 0; else no_patients">Broj pacijenata: <span class="badge badge-danger">{{totalPatients}}</span></p>
+        <ng-template #no_patients>
+          <p class="card-text">
+            <span class="badge badge-dark">Nema pacijenata
+            </span></p>
+        </ng-template>
+        <a routerLink="/patients" class="btn btn-outline-danger"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+        <a routerLink="/patients/add" class="btn btn-outline-dark"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Pregledi <i class="fa fa-list-alt fa-5x float-right text-danger"></i></h4>
+        <p class="card-text" *ngIf="totalBookings > 0; else no_bookings">Broj zakazanih: <span class="badge badge-danger">{{totalBookings}}</span></p>
+        <ng-template #no_bookings>
+          <p class="card-text">
+            <span class="badge badge-dark">Nema zakazanih pregleda</span>
+          </p>
+        </ng-template>
+        <a routerLink="/bookings" class="btn btn-outline-danger"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+        <a routerLink="/bookings/add" class="btn btn-outline-dark"><i class="fa fa-plus" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

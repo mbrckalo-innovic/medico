@@ -1,0 +1,12 @@
+.list-group-item.active {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+  z-index: 2;
+}
+
+.list-group-item {
+  background-color: #fff;
+  color: #343a40;
+  z-index: 2;
+}

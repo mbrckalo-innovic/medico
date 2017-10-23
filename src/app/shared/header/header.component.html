@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand navbar-light bg-light mb-5">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+    <strong class="text-danger">M</strong>edico
+  </a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" #DropdownLink data-toggle="dropdown">
+        <i class="fa fa-info-circle"></i> Info
+      </a>
+      <div class="dropdown-menu dropdown-menu-right custom_a">
+        <a class="dropdown-item" data-toggle="modal" data-target="#DropdownModal">
+          <i class="fa fa-heart"></i> Credits
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<div class="modal fade" id="DropdownModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h5 class="modal-title text-white">Credits</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action flex-column align-items-start mb-1">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Brand Identity</h5>
+            </div>
+            Logo designed by <strong>Pixel Buddha</strong> from
+            <a class="custom_a" href="https://www.flaticon.com/">Flaticon</a>.
+          </a>
+          <a class="list-group-item list-group-item-action flex-column align-items-start mb-1">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Avatars</h5>
+            </div>
+            Avatars designed by <strong>Icon Pond</strong> from
+            <a class="custom_a" href="https://www.flaticon.com/">Flaticon</a>.
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

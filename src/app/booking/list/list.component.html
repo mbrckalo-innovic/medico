@@ -1,0 +1,45 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">Pregledi</li>
+  <div class="btn-group btn-group-sm float-right" role="group" aria-label="Sorting">
+    <button type="button" class="btn btn-danger" (click)="byOlder()">
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="btn btn-danger" (click)="byNewer()">
+      <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </button>
+    <button routerLink="/bookings/add" type="button" class="btn btn-dark">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Novi pregled
+    </button>
+  </div>
+</ol>
+<table class="table table-striped table-responsive" *ngIf="(bookings$ | async)?.length != 0; else no_results">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Doktor</th>
+    <th>Pacijent</th>
+    <th>Datum</th>
+    <th>Vrijeme</th>
+    <th>Dodatno</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let booking of bookings$ | async | order:newer">
+    <td scope="row">{{booking.id}}</td>
+    <td>{{booking.doctor_name}}</td>
+    <td>{{booking.patient_name}}</td>
+    <td>{{booking.date}}</td>
+    <td>{{booking.time}}</td>
+    <td *ngIf="booking.description.length > 0; else no_description">{{booking.description}}</td>
+    <ng-template #no_description>
+      <td class="text-secondary"><em>prazno</em></td>
+    </ng-template>
+  </tr>
+  </tbody>
+</table>
+<ng-template #no_results>
+  <div class="alert alert-warning" role="alert">
+    Nema zakazanih pregleda.
+  </div>
+</ng-template>
